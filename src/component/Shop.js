@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect} from "react";
 import axios from "axios";
-import { NavLink} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
 function Shop() {
     const [items, setItems] = useState([])
@@ -20,7 +20,10 @@ function Shop() {
         <div>
             {items.map( (item) => (
                         <h3 key={item.id}>
-                            <NavLink to={`/shop/${item.id}`}>{item.name}</NavLink>
+                            {/*<nav>*/}
+                                <Link to={`/shop/${item.id}`}>{item.name}</Link>
+                            {/*</nav>*/}
+                            {/*<NavLink to={`/shop/${item.id}`}>{item.name}</NavLink>*/}
                         </h3>
                 ))
             }
